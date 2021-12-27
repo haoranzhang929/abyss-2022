@@ -1,0 +1,57 @@
+{
+  "name": "react-tsc-eslint-prettier",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^17.0.5",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "npm run precheck && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "tsc": "echo 'Type Checking...' && tsc --noEmit && echo 'Type Checking Completetd'",
+    "lint": "echo 'Lint Checking...' && eslint --ext .js,.jsx,.ts,.tsx src && echo 'Lint Checking Completetd'",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
+    "prettier": "echo 'Format Checking...' && prettier --check '**/*.{js,jsx,ts,tsx,json}' && echo 'Format Checking Completetd'",
+    "prettier:fix": "prettier --write '**/*.{js,jsx,ts,tsx,json}'",
+    "precheck": "npm run prettier && npm run lint && npm run tsc"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
+  }
+}
